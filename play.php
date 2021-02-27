@@ -13,15 +13,11 @@ $pdo = new PDO($dsn,$user,$password,$options);
 
   //consoleにエラーを出さないために値を返す
   $sql = "SELECT `food_name` FROM `food_names`";
-  $stmt = ($pdo->prepare($sql));
-  $stmt->execute();
-
-  if ($age_data = $pdo->query($sql)) {
+  $age_data = $pdo->query($sql);
     // ②テーブルのデータをoptionタグに整形
     foreach($age_data as $age_data_val){
         $age_data .= "<option value='". $age_data_val['age_val'];
         $age_data .= "'>". $age_data_val['age_data']. "</option>";
-    }
     }
   $sql_list = $stmt->fetchAll();
 
