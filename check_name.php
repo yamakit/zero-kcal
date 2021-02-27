@@ -17,7 +17,7 @@ $_SESSION['name'] = $name;
 </head>
 
 <body>
-    <form action="check_name.php" method="post">
+    <form action="result_name.php" method="post">
         <p>入力内容：</p><?php echo $name;?>
         <input id ="send" type="submit" value = "登録">
     </form>   
