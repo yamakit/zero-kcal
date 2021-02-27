@@ -4,21 +4,24 @@ $name = htmlspecialchars($_POST['name'], ENT_QUOTES, 'UTF-8');
 $_SESSION['name'] = $name;
 
 $db = parse_url($_SERVER['CLEARDB_DATABASE_URL']);
- $db['dbname'] = ltrim($db['path'], '/');
- $dsn = "mysql:host={$db['host']};dbname={$db['dbname']};charset=utf8";
- $user = $db['user'];
- $password = $db['pass'];
- $options = array(
-   PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-   PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-   PDO::MYSQL_ATTR_USE_BUFFERED_QUERY =>true,
- );
- $pdo = new PDO($dsn,$user,$password,$options);
+$db['dbname'] = ltrim($db['path'], '/');
+$dsn = "mysql:host={$db['host']};dbname={$db['dbname']};charset=utf8";
 
-  //3.データ登録SQLの作成
-  $sql = "INSERT INTO `food_names`(`food_name`) VALUES ('チーズ')";
+try {
+    $db = new PDO($dsn, $db['user'], $db['pass']);
+    $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-  $stmt = $pdo->query($sql);
+    $sql = 'SELECT * FROM `food_names`';
+    $prepare = $db->prepare($sql);
+    $prepare->execute();
+
+    $prepare->execute();
+    $result = $prepare->fetchAll(PDO::FETCH_ASSOC);
+    print_r(h($result));
+} catch (PDOException $e) {
+    echo 'Error: ' . h($e->getMessage());
+}
 
 ?>
 
