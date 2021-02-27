@@ -19,7 +19,7 @@ $pdo = new PDO($dsn,$user,$password,$options);
         $age_data .= "<option value='". $age_data_val['age_val'];
         $age_data .= "'>". $age_data_val['age_data']. "</option>";
     }
-//   $sql_list = $stmt->fetchAll();
+  $sql_list = $stmt->fetchAll();
 
 ?>
 
@@ -35,7 +35,6 @@ $pdo = new PDO($dsn,$user,$password,$options);
 </head>
 
 <body>
-    <?php echo $age_data;?>
     <button type=“button” onclick="location.href='result.html'">これにする</button>
     <form method='POST' action="/result.php">
         <select name="food_name" id="food_name">

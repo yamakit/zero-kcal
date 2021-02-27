@@ -13,7 +13,7 @@ $options = array(
 $pdo = new PDO($dsn,$user,$password,$options);
 
   //consoleにエラーを出さないために値を返す
-  $sql = "SELECT `id`, `datetime`, `y_coordinate` FROM `y_coordinate`";
+  $sql = "SELECT `food_name` FROM `food_names`";
   $stmt = ($pdo->prepare($sql));
   $stmt->execute();
 
