@@ -1,7 +1,7 @@
 <?php 
-session_start();
-$name = htmlspecialchars($_POST['name'], ENT_QUOTES, 'UTF-8');
-$_SESSION['name'] = $name;
+// session_start();
+// $name = htmlspecialchars($_POST['name'], ENT_QUOTES, 'UTF-8');
+// $_SESSION['name'] = $name;
 
 $db = parse_url($_SERVER['CLEARDB_DATABASE_URL']);
 $db['dbname'] = ltrim($db['path'], '/');
