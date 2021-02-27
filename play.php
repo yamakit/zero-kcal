@@ -16,6 +16,13 @@ $pdo = new PDO($dsn,$user,$password,$options);
   $stmt = ($pdo->prepare($sql));
   $stmt->execute();
 
+  if ($age_data = $pdo->query($sql)) {
+    // ②テーブルのデータをoptionタグに整形
+    foreach($age_data as $age_data_val){
+        $age_data .= "<option value='". $age_data_val['age_val'];
+        $age_data .= "'>". $age_data_val['age_data']. "</option>";
+    }
+    }
   $sql_list = $stmt->fetchAll();
 
 ?>
@@ -36,7 +43,7 @@ $pdo = new PDO($dsn,$user,$password,$options);
     <form method='POST' action="/result.php">
         <select name="food_name" id="food_name">
             <?php
-            echo "$sql_list";
+            echo $age_data;
             ?>
         </select>
         <input type="submit" value='送信' />
