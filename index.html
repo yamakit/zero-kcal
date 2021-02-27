@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./static/style.css">
+    <title>
+        ファイルをアップロード
+    </title>
+</head>
+
+<body>
+    <h1>
+        タイトル
+    </h1>
+    <h2>
+        写真をアップロードしてください
+    </h2>
+    <form method=post enctype=multipart/form-data>
+        <p><input type=file name=file>
+            <input type=button onclick="location.href='upload.html'" value=Upload> <!-- type = submit -->
+    </form>
+</body>
