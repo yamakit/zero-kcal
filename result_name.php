@@ -16,7 +16,7 @@ $db = parse_url($_SERVER['CLEARDB_DATABASE_URL']);
  $pdo = new PDO($dsn,$user,$password,$options);
 
   //3.データ登録SQLの作成
-  $sql = "INSERT INTO `food_names`(`food_name`) VALUES ($name)";
+  $sql = "INSERT INTO `food_names`(`food_name`) VALUES ('チーズ')";
 
   $stmt = $pdo->query($sql);
 
