@@ -10,16 +10,17 @@ $options = array(
   PDO::MYSQL_ATTR_USE_BUFFERED_QUERY =>true,
 );
 $pdo = new PDO($dsn,$user,$password,$options);
-
+$age_data = array();
   //consoleにエラーを出さないために値を返す
   $sql = "SELECT `food_name` FROM `food_names`";
-  $age_data = $pdo->query($sql);
+  $stmt = $pdo->query($sql);
     // // ②テーブルのデータをoptionタグに整形
     // foreach($age_data as $age_data_val){
     //     $age_data .= "<option value='". $age_data_val['age_val'];
     //     $age_data .= "'>". $age_data_val['age_data']. "</option>";
     // }
 //   $sql_list = $stmt->fetchAll();
+$age_data = $stmt->fetchAll();
 
 ?>
 
@@ -43,6 +44,7 @@ $pdo = new PDO($dsn,$user,$password,$options);
             ?>
         </select>
         <input type="submit" value='送信' />
+        <?php echo $age_data;?>
     </form>
 
     <!-- タイトルをかく -->
