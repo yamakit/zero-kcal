@@ -37,7 +37,4 @@
   header('Content-type: application/json');
   echo json_encode($sql_list,JSON_UNESCAPED_UNICODE);
   
-  $mysqli->close();
-  
-
 ?>

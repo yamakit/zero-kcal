@@ -43,8 +43,7 @@ $age_data = $stmt->fetchAll();
             echo $age_data;
             ?>
         </select>
-        <input type="submit" value='送信' />
-        <?php echo $age_data;?>
+        <input type="submit" value='送信'/>
     </form>
 
     <!-- タイトルをかく -->
