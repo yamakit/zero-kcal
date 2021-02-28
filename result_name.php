@@ -9,7 +9,7 @@ $db = parse_url($_SERVER['CLEARDB_DATABASE_URL']);
 $db['dbname'] = ltrim($db['path'], '/');
 $dsn = "mysql:host={$db['host']};dbname={$db['dbname']};charset=utf8";
 $sql = "INSERT INTO `food_names`(`food_name`) VALUES (:name)";
-$stmt = $dbh->prepare($sql); //挿入する値は空のまま、SQL実行の準備をする
+$stmt = $pdo->prepare($sql); //挿入する値は空のまま、SQL実行の準備をする
 $params = array(':name' => $name); // 挿入する値を配列に格納する
 $stmt->execute($params); 
 ?>
