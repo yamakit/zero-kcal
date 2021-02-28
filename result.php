@@ -16,9 +16,8 @@ $food_name = $_POST['food_name'];
 <body>
     <!-- phpを使ってdbから値を取得する -->
     <h1>
-        {name}は{reason}なので
-    </h1>
-    <h1>
+        <?php echo $food_name?>は
+        {reason}なので
         カロリーがゼロです
     </h1>
     <button type=“button” onclick="location.href='play.html'">もう一度プレイする</button>

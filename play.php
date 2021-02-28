@@ -1,26 +1,16 @@
 <?php
-$db = parse_url($_SERVER['CLEARDB_DATABASE_URL']);
-$db['dbname'] = ltrim($db['path'], '/');
-$dsn = "mysql:host={$db['host']};dbname={$db['dbname']};charset=utf8";
-$user = $db['user'];
-$password = $db['pass'];
-$options = array(
-  PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-  PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-  PDO::MYSQL_ATTR_USE_BUFFERED_QUERY =>true,
-);
-$pdo = new PDO($dsn,$user,$password,$options);
-$age_data = array();
-  //consoleにエラーを出さないために値を返す
-  $sql = "SELECT `food_name` FROM `food_names`";
-  $stmt = $pdo->query($sql);
-    // // ②テーブルのデータをoptionタグに整形
-    // foreach($age_data as $age_data_val){
-    //     $age_data .= "<option value='". $age_data_val['age_val'];
-    //     $age_data .= "'>". $age_data_val['age_data']. "</option>";
-    // }
-//   $sql_list = $stmt->fetchAll();
-$age_data = $stmt->fetchAll();
+include('function.php');
+session_start();
+$name = htmlspecialchars($_POST['name'], ENT_QUOTES, 'UTF-8');
+$pdo = dbConnect();
+
+$sql = "SELECT `food_name` FROM `food_names`";
+$age_data = $pdo->query($sql); //挿入する値は空のまま、SQL実行の準備をする
+
+foreach($age_data as $age_data_val){
+    $age_data .= "<option value='". $age_data_val['age_val'];
+    $age_data .= "'>". $age_data_val['age_data']. "</option>";
+}
 
 ?>
 
@@ -43,7 +33,7 @@ $age_data = $stmt->fetchAll();
             echo $age_data;
             ?>
         </select>
-        <input type="submit" value='送信'/>
+        <input type="submit" value='これにする'/>
     </form>
 
     <!-- タイトルをかく -->
