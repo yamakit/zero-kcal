@@ -37,7 +37,8 @@ $_SESSION['name'] = $name;
 
 <body>
     <form action="result_name.php" method="post">
-        <h1>入力内容：<?php echo $name?></h1>
+        <h1>入力内容：</h1>
+        <input id = "name" type="hidden" value="<?php echo $name;?>">
         <input id ="send" type="submit" value = "登録">
     </form>   
     <button type=“button” onclick="location.href='insert_name.php'">入力内容を変更する</button>
