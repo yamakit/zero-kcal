@@ -41,7 +41,6 @@
   
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -54,8 +53,10 @@
 </head>
 
 <body>
-    <!-- タイトルをつけてボタンを見た目整える -->
-    <input type=button onclick="location.href='check_cal.php'" value=Upload>
+    <form action="check_name.php" method="post">
+        <input type="text" name="name" maxlength="30" placeholder="◯◯なのでカロリーがゼロになります" required>
+        <input id ="send" type="submit" value = "送信">
+    </form>   
 </body>
 
 </html>
