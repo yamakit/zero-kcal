@@ -26,6 +26,7 @@ $stmt->execute($params);
 </head>
 
 <body>
+    <?php echo $name;?>
     <h1>登録が完了しました</h1>
     <button type=“button” onclick="location.href='insert.html'">もう一度入力する</button>
     <button type=“button” onclick="location.href='index.html'">ホームに戻る</button>
