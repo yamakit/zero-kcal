@@ -1,19 +1,17 @@
 <?php 
+include "function.php";
 // session_start();
 // $name = htmlspecialchars($_POST['name'], ENT_QUOTES, 'UTF-8');
 // $_SESSION['name'] = $name;
+$pdo = dbConnect();
 
 $db = parse_url($_SERVER['CLEARDB_DATABASE_URL']);
 $db['dbname'] = ltrim($db['path'], '/');
 $dsn = "mysql:host={$db['host']};dbname={$db['dbname']};charset=utf8";
 
 try {
-    $db = new PDO($dsn, $db['user'], $db['pass']);
-    $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-    $sql = 'SELECT * FROM `food_names`';
-    $prepare = $db->prepare($sql);
+    $sql = "INSERT INTO `food_names`(`food_name`) VALUES ('チーズ')";
+    $prepare = $pdo->prepare($sql);
     $prepare->execute();
 
     $prepare->execute();
