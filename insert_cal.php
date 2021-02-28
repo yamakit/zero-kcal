@@ -53,8 +53,8 @@
 </head>
 
 <body>
-    <form action="check_name.php" method="post">
-        <input type="text" name="name" maxlength="30" placeholder="◯◯なのでカロリーがゼロになります" required>
+    <form action="check_cal.php" method="post">
+        <input type="text" name="name" maxlength="50" placeholder="◯◯なのでカロリーがゼロになります" required>
         <input id ="send" type="submit" value = "送信">
     </form>   
 </body>
