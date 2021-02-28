@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <form action="check_name.php" method="post">
+    <form action="result_name.php" method="post">
         <input type="text" name="name" maxlength="15" placeholder="ドーナツ" required>
         <input id ="send" type="submit" value = "送信">
     </form>   
