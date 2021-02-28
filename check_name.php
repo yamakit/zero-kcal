@@ -40,7 +40,7 @@ $_SESSION['name'] = $name;
         <h1>入力内容：<?php echo $name?></h1>
         <input id ="send" type="submit" value = "登録">
     </form>   
-    <button type=“button” onclick="location.href='insert_name.php'">ホームに戻る</button>
+    <button type=“button” onclick="location.href='insert_name.php'">入力内容を変更する</button>
 
 </body>
 
