@@ -1,5 +1,5 @@
 <?php 
-include "function.php";
+include('function.php');
 // session_start();
 // $name = htmlspecialchars($_POST['name'], ENT_QUOTES, 'UTF-8');
 // $_SESSION['name'] = $name;
@@ -9,18 +9,13 @@ $db = parse_url($_SERVER['CLEARDB_DATABASE_URL']);
 $db['dbname'] = ltrim($db['path'], '/');
 $dsn = "mysql:host={$db['host']};dbname={$db['dbname']};charset=utf8";
 
-try {
+
     $sql = "INSERT INTO `food_names`(`food_name`) VALUES ('チーズ')";
-    $prepare = $pdo->prepare($sql);
-    $prepare->execute();
+    $prepare = $pdo->query($sql);
+    // $prepare->execute();
 
-    $prepare->execute();
-    $result = $prepare->fetchAll(PDO::FETCH_ASSOC);
-    print_r(h($result));
-} catch (PDOException $e) {
-    echo 'Error: ' . h($e->getMessage());
-}
-
+    // $prepare->execute();
+    // $result = $prepare->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 
