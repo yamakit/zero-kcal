@@ -55,7 +55,7 @@
 
 <body>
     <!-- タイトルをつけてボタンを見た目整える -->
-    <input type=button onclick="location.href='result_cal.html'" value=Upload>
+    <input type=button onclick="location.href='check_cal.php'" value=Upload>
 </body>
 
 </html>

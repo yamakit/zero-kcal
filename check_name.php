@@ -1,7 +1,7 @@
 <?php 
-// session_start();
-// $name = htmlspecialchars($_POST['name'], ENT_QUOTES, 'UTF-8');
-// $_SESSION['name'] = $name;
+session_start();
+$name = htmlspecialchars($_POST['name'], ENT_QUOTES, 'UTF-8');
+$_SESSION['name'] = $name;
 
 // $db = parse_url($_SERVER['CLEARDB_DATABASE_URL']);
 //  $db['dbname'] = ltrim($db['path'], '/');
@@ -40,6 +40,8 @@
         <h1>入力内容：<?php echo $name?></h1>
         <input id ="send" type="submit" value = "登録">
     </form>   
+    <button type=“button” onclick="location.href='insert_name.php'">ホームに戻る</button>
+
 </body>
 
 </html>
