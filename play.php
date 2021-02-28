@@ -1,7 +1,6 @@
 <?php
 include('function.php');
 session_start();
-$name = htmlspecialchars($_POST['name'], ENT_QUOTES, 'UTF-8');
 $pdo = dbConnect();
 
 $sql = "SELECT `food_name` FROM `food_names`";
