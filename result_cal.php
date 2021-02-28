@@ -24,7 +24,7 @@ $prepare = $pdo->query($sql);
 </head>
 
 <body>
-    <h1><?php echo $name?>を登録しました</h1>
+    <h1>「<?php echo $name?>」を登録しました</h1>
     <button type=“button” onclick="location.href='insert.html'">もう一度入力する</button>
     <button type=“button” onclick="location.href='index.html'">ホームに戻る</button>
 </body>
