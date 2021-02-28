@@ -2,13 +2,12 @@
 include('function.php');
 session_start();
 $name = htmlspecialchars($_POST['name'], ENT_QUOTES, 'UTF-8');
-$_SESSION['name'] = $name;
 $pdo = dbConnect();
 
 $db = parse_url($_SERVER['CLEARDB_DATABASE_URL']);
 $db['dbname'] = ltrim($db['path'], '/');
 $dsn = "mysql:host={$db['host']};dbname={$db['dbname']};charset=utf8";
-$sql = "INSERT INTO `food_descriptions`(`food_description`) VALUES ()";
+$sql = "INSERT INTO `food_descriptions`(`food_description`) VALUES ($name)";
 $prepare = $pdo->query($sql);
 ?>
 
