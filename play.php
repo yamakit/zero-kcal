@@ -29,6 +29,7 @@ foreach($age_data as $age_data_val){
 <body>
     <button type=“button” onclick="location.href='result.html'">これにする</button>
     <script>
+        drawChart();
          function drawChart() {
             $.ajax({
                 url: './play2.php',
@@ -39,7 +40,6 @@ foreach($age_data as $age_data_val){
                 console.log("通信が成功しました");
             });
         }
-        drawChart();
     </script>
     <form method='POST' action="/result.php">
         <select name="food_name" id="food_name" class="test">
