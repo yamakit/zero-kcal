@@ -42,11 +42,13 @@ foreach($age_data as $age_data_val){
                 type: 'POST',
                 data: { y: 100 }
             }).done((data) => {
+                console.log(data)
                 $("#SelectPref").empty();
                 var append = '<option value=""></option>&#10;';
-                for(var i = 0; i < data.length; i++) {
+                //i < data.length
+                for(var i = 0; i =150; i++) {
                 append += '<option value="' + data[i].id + '" >';
-                append += data[i].name;
+                append += data[i].food_name;
                 append += '</option>';
                 append += '&#10;';
             }
