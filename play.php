@@ -30,7 +30,7 @@ foreach($age_data as $age_data_val){
 <body>
 <script>
     window.onload = function (){
-        drawChart()
+        drawChart();
     }
         drawChart();
          function drawChart() {

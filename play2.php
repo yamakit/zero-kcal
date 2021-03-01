@@ -1,4 +1,3 @@
-
 <?php
 $y=$_POST['y'];
 $db = parse_url($_SERVER['CLEARDB_DATABASE_URL']);
