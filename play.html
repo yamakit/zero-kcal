@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>プレイ画面</title>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
@@ -12,11 +13,10 @@
             getPrefData();
         }
     </script>
-    <h2>好きな食べ物を選んでください</h2>
-    選択肢：
+    <h1>好きな食べ物を選んでください</h1>
     <form method="POST" action="/result.php">
         <select name="SelectPref" id="SelectPref">
-            <option selected disabled>未選択</option>
+            <option>未選択</option>
             <option value=""></option>
         </select>
         <input type="submit" name="submit" value="送信" />
