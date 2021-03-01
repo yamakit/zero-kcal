@@ -9,7 +9,7 @@ $stmt = $pdo->query($sql); //挿入する値は空のまま、SQL実行の準備
 $product = $stmt->fetch(PDO::FETCH_ASSOC);
 $name = $product['food_name'];
 
-$sql2 = "SELECT `food_description` FROM `food_descriptions` ORDER BY rand() LIMIT1";
+$sql2 = "SELECT `food_description` FROM `food_descriptions` ORDER BY rand() LIMIT 1";
 $stmt2 = $pdo->query($sql2); //挿入する値は空のまま、SQL実行の準備をする
 $products = $stmt2->fetch(PDO::FETCH_ASSOC);
 $reason = $products['food_description'];
