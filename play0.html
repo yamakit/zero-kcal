@@ -9,9 +9,11 @@
 <body>
     <h2>test ajax json file</h2>
     都道府県：
-    <select name="SelectPref" id="SelectPref">
-        <option value=""></option>
-    </select>
+    <form method="POST" action="/result.php">
+        <select name="SelectPref" id="SelectPref">
+            <option value=""></option>
+        </select>
+    </form>
     <button onclick="getPrefData();">Ajax</button>
 
     <script type="text/javascript">

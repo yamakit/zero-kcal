@@ -1,5 +1,5 @@
 <?php
-$food_name = $_POST['food_name'];
+$food_name = $_POST['SelectPref'];
 ?>
 
 <!doctype html>
