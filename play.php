@@ -57,11 +57,11 @@ foreach($age_data as $age_data_val){
         }
     </script>
     <!-- <button type=“button” onclick="location.href='result.html'">これにする</button> -->
-    <form method='POST' action="/result.php">
+    <!-- <form method='POST' action="/result.php"> -->
         <select name="SelectRpef" id ="food_name">
             <option value=""></option>      
         </select>
-    </form>
+    <!-- </form> -->
 
    
     <!-- <label for="aaa">プルダウン A : </label>
