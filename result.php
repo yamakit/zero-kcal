@@ -4,7 +4,7 @@ include('function.php');
 session_start();
 $pdo = dbConnect();
 
-$sql = "SELECT * FROM `food_names` WHERE id = {$food_name}";
+$sql = "SELECT * FROM `food_names` WHERE id = $food_name";
 $stmt = $pdo->query($sql); //挿入する値は空のまま、SQL実行の準備をする
 $product = $stmt->fetch(PDO::FETCH_ASSOC);
 $name = $product['name'];
