@@ -51,7 +51,7 @@ foreach($age_data as $age_data_val){
                 append += '&#10;';
             }
             $("#SelectPref").append(append);
-        }
+        
             });
         }
     </script>
