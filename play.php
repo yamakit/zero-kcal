@@ -31,9 +31,9 @@ foreach($age_data as $age_data_val){
     <!-- <button type=“button” onclick="location.href='result.html'">これにする</button> -->
     <form method='POST' action="/result.php">
         <select name="SelectRpef" id ="food_name">
-            <option value=""></option>
-            <input type="submit" value="これにする"/>
+            <option value=""></option>      
         </select>
+        <input type="submit" value="これにする"/>
     </form>
     <button onclick="drawChart()">Ajax</button>
 
