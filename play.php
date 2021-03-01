@@ -28,6 +28,7 @@ foreach($age_data as $age_data_val){
 
 <body>
     <button type=“button” onclick="location.href='result.html'">これにする</button>
+    <script>console.log(<?php echo $age_data?>)</script>
     <form method='POST' action="/result.php">
         <select name="food_name" id="food_name">
             <option selected disabled>未選択</option>
