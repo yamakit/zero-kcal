@@ -38,19 +38,22 @@ foreach($age_data as $age_data_val){
                 url: './play2.php',
                 type: 'POST',
                 data: { y: 100 }
-            }).done((data) => {
-                console.log(data)
+                success: function(PrefData) {
+                console.log(PrefData);
+                // select の内容削除
                 $("#SelectPref").empty();
                 var append = '<option value=""></option>&#10;';
-                for(var i = 0; i < data.length; i++) {
-                append += '<option value="' + data[i].id + '" >';
-                append += data[i].food_name;
-                append += '</option>';
-                append += '&#10;';
+                // JSON データを option に展開生成
+                for(var i = 0; i < PrefData.length; i++) {
+                    append += '<option value="' + PrefData[i].id + '" >';
+                    append += PrefData[i].food_name;
+                    append += '</option>';
+                    append += '&#10;';
+                }
+                // select の内容に設定
+                $("#SelectPref").append(append);
             }
-            $("#SelectPref").append(append);
-        
-            });
+        });
         }
     </script>
     <!-- <button type=“button” onclick="location.href='result.html'">これにする</button> -->
