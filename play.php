@@ -29,9 +29,11 @@ foreach($age_data as $age_data_val){
 
 <body>
     <button type=“button” onclick="location.href='result.html'">これにする</button>
-    <select name="SelectRpef" id ="SelectPref">
-        <option value=""></option>
-    </select>
+    <form method='POST' action="/result.php">
+        <select name="SelectRpef" id ="food_name">
+            <option value=""></option>
+        </select>
+    </form>
     <button onclick="drawChart()">Ajax</button>
 
     <script>
