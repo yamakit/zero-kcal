@@ -30,9 +30,13 @@ foreach($age_data as $age_data_val){
     <button type=“button” onclick="location.href='result.html'">これにする</button>
     <form method='POST' action="/result.php">
         <select name="food_name" id="food_name">
+            <option selected disabled>未選択</option>
             <?php
-            echo $age_data;
-            ?>
+            $sql = "SELECT * FROM `food_names`";
+            $age_data = $pdo->query($sql);
+            while( $data = $age_data->FETCH_ASSOC()){ ?>
+                <option value="<?=$data['id']?>"><?=$data['food_name']?></option>
+            <?php } ?>
         </select>
         <input type="submit" value='これにする'/>
     </form>
