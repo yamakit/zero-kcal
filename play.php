@@ -28,16 +28,7 @@ foreach($age_data as $age_data_val){
 </head>
 
 <body>
-    <!-- <button type=“button” onclick="location.href='result.html'">これにする</button> -->
-    <form method='POST' action="/result.php">
-        <select name="SelectRpef" id ="food_name">
-            <option value=""></option>      
-        </select>
-        <input type="submit" value="これにする"/>
-    </form>
-    <button onclick="drawChart()">Ajax</button>
-
-    <script>
+<script>
         drawChart();
          function drawChart() {
             $.ajax({
@@ -59,9 +50,19 @@ foreach($age_data as $age_data_val){
             });
         }
     </script>
-    <label for="aaa">プルダウン A : </label>
+    <!-- <button type=“button” onclick="location.href='result.html'">これにする</button> -->
+    <form method='POST' action="/result.php">
+        <select name="SelectRpef" id ="food_name">
+            <option value=""></option>      
+        </select>
+        <input type="submit" value="これにする"/>
+    </form>
+    <button onclick="drawChart()">Ajax</button>
+
+   
+    <!-- <label for="aaa">プルダウン A : </label>
     <select name="a" id ="aaa">
-        <option selected disabled>未選択</option>
+        <option selected disabled>未選択</option> -->
     <!-- <form method='POST' action="/result.php">
         <select name="food_name" id="food_name" class="test">
             <option selected disabled>未選択</option>
