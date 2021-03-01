@@ -29,6 +29,9 @@ foreach($age_data as $age_data_val){
 
 <body>
 <script>
+    window.onload = function (){
+        drawChart()
+    }
         drawChart();
          function drawChart() {
             $.ajax({
@@ -57,7 +60,6 @@ foreach($age_data as $age_data_val){
         </select>
         <input type="submit" value="これにする"/>
     </form>
-    <button onclick="drawChart()">Ajax</button>
 
    
     <!-- <label for="aaa">プルダウン A : </label>
