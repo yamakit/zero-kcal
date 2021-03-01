@@ -9,6 +9,11 @@ $stmt = $pdo->query($sql); //挿入する値は空のまま、SQL実行の準備
 $product = $stmt->fetch(PDO::FETCH_ASSOC);
 $name = $product['food_name'];
 
+$sql2 = "SELECT `food_description` FROM `food_descriptions` ORDER BY rand() LIMIT1";
+$stmt2 = $pdo->query($sql2); //挿入する値は空のまま、SQL実行の準備をする
+$products = $stmt2->fetch(PDO::FETCH_ASSOC);
+$reason = $products['food_description'];
+
 $pdo = null;
 ?>
 
@@ -24,9 +29,9 @@ $pdo = null;
 <body>
     <!-- phpを使ってdbから値を取得する -->
     <h1>
-        <?php echo $name?>は
-        {reason}なので
-        カロリーがゼロです
+        <?php echo $name?>は<br>
+        <?php echo $reason?>なので<br>
+        カロリーがゼロです！
     </h1>
     <button type=“button” onclick="location.href='play.html'">もう一度プレイする</button>
     <button type=“button” onclick="location.href='index.html'">ホームに戻る</button>
