@@ -7,6 +7,11 @@
 </head>
 
 <body>
+    <script>
+        window.onload = function () {
+            getPrefData();
+        }
+    </script>
     <h2>test ajax json file</h2>
     都道府県：
     <form method="POST" action="/result.php">
@@ -15,7 +20,6 @@
         </select>
         <input type="submit" name="submit" value="送信" />
     </form>
-    <button onclick="getPrefData();">Ajax</button>
 
     <script type="text/javascript">
         function getPrefData() {
