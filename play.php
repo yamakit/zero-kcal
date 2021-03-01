@@ -35,7 +35,7 @@ foreach($age_data as $age_data_val){
         setInterval('view()', 3000);
     </script>
     <form method='POST' action="/result.php">
-        <select name="food_name" id="food_name">
+        <select name="food_name" id="food_name" class="test">
             <option selected disabled>未選択</option>
             <?php
             $sql = "SELECT * FROM `food_names`";
