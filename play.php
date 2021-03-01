@@ -3,15 +3,16 @@ include('function.php');
 session_start();
 $pdo = dbConnect();
 
-$sql = "SELECT `food_name` FROM `food_names`";
-if ($age_data = $pdo->query($sql)) {
- 
-    // ②テーブルのデータをoptionタグに整形
-    foreach($age_data as $age_data_val){
-        $age_data .= "<option value='". $age_data_val['age_val'];
-        $age_data .= "'>". $age_data_val['age_data']. "</option>";
-    }
+$sql = "SELECT * FROM `food_names`";
+$age_data = $pdo->query($sql); //挿入する値は空のまま、SQL実行の準備をする
+
+$age_data = "";
+
+foreach($age_data as $age_data_val){
+    $age_data .= "<option value='". $age_data_val['id'];
+    $age_data .= "'>". $age_data_val['food_name']. "</option>";
 }
+
 ?>
 
 <!DOCTYPE html>
