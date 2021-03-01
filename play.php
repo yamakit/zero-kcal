@@ -58,11 +58,11 @@ foreach($age_data as $age_data_val){
         <select name="SelectRpef" id ="food_name">
             <option value=""></option>      
         </select>
-        <input type="submit" value="これにする"/>
     </form>
 
    
     <!-- <label for="aaa">プルダウン A : </label>
+           <input type="submit" value="これにする"/>
     <select name="a" id ="aaa">
         <option selected disabled>未選択</option> -->
     <!-- <form method='POST' action="/result.php">
