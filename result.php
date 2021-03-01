@@ -27,7 +27,6 @@ $pdo = null;
     </title>
 </head>
 <body>
-    <!-- phpを使ってdbから値を取得する -->
     <h1>
         <?php echo $name?>は<br>
         <?php echo $reason?>なので<br>
