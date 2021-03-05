@@ -29,7 +29,7 @@ $pdo = null;
 <body>
     <h1>
         <?php echo $name?>は<br>
-        <?php echo $reason?><br>
+        <?php echo $reason?>なので<br>
         カロリーがゼロです！
     </h1>
     <button type=“button” onclick="location.href='play.html'">もう一度プレイする</button>
