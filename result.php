@@ -29,8 +29,8 @@ $pdo = null;
 <body>
     <h1>
         <?php echo $name?>は<br>
-        <?php echo $reason?>なので<br>
-        カロリーがゼロです！
+        <?php echo $reason?><br>
+        カロリーゼロです！
     </h1>
     <button type=“button” onclick="location.href='play.html'">もう一度プレイする</button>
     <button type=“button” onclick="location.href='index.html'">ホームに戻る</button>
